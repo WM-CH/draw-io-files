@@ -1,10 +1,10 @@
-<mxfile host="app.diagrams.net" modified="2021-01-13T12:05:50.175Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="ZqY3GDxmZ-HYUlh8lVzR" version="14.1.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-13T15:05:14.319Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="g47j86dbICk5MRsbNk2T" version="14.1.9" type="github">
   <diagram id="JkMtZPwAcen48O5Z7KO6" name="第 1 页">
-    <mxGraphModel dx="2844" dy="1524" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="h-AYutWAJ_S-bmYvBNu8-3" target="h-AYutWAJ_S-bmYvBNu8-6">
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="h-AYutWAJ_S-bmYvBNu8-3" target="h-AYutWAJ_S-bmYvBNu8-6" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1040" y="228.25" />
@@ -12,78 +12,78 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-2" value="inet_create" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="h-AYutWAJ_S-bmYvBNu8-1">
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-2" value="inet_create" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="h-AYutWAJ_S-bmYvBNu8-1" vertex="1" connectable="0">
           <mxGeometry x="-0.1493" y="-1" relative="1" as="geometry">
             <mxPoint x="58" y="-1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-3" value="生成socket&lt;br&gt;调用inet_create&lt;br&gt;将socket加入sockets链表&lt;br&gt;sock_amount++" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;align=left;" vertex="1" parent="1">
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-3" value="生成socket&lt;br&gt;调用inet_create&lt;br&gt;将socket加入sockets链表&lt;br&gt;sock_amount++" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;align=left;" parent="1" vertex="1">
           <mxGeometry x="930" y="193.69" width="150" height="68.62" as="geometry" />
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="h-AYutWAJ_S-bmYvBNu8-6" target="h-AYutWAJ_S-bmYvBNu8-16">
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="h-AYutWAJ_S-bmYvBNu8-6" target="h-AYutWAJ_S-bmYvBNu8-16" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-5" value="tcp_alloc_sock" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="h-AYutWAJ_S-bmYvBNu8-4">
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-5" value="tcp_alloc_sock" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="h-AYutWAJ_S-bmYvBNu8-4" vertex="1" connectable="0">
           <mxGeometry x="-0.1667" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-6" value="根据传入的参数type&lt;br&gt;选择一项，作为skt：&lt;br&gt;&lt;div&gt;struct sock_type inet_ops[] = {&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;{&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;&amp;nbsp; .sock_ops = &amp;amp;sock_ops,&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;&amp;nbsp; .net_ops = &amp;amp;tcp_ops,&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;&amp;nbsp; .type = SOCK_STREAM,&lt;span&gt;  &lt;/span&gt;//TCP&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;&amp;nbsp; .protocol = IPPROTO_TCP,&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;},&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;{&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;&amp;nbsp; .sock_ops = &amp;amp;sock_ops,&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;&amp;nbsp; .net_ops = &amp;amp;udp_ops,&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;&amp;nbsp; .type = SOCK_DGRAM,&lt;span&gt;  &lt;/span&gt;//UDP&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;&amp;nbsp; .protocol = IPPROTO_UDP,&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;}&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;socket-&amp;gt;ops = skt-&amp;gt;sock_ops;/&lt;font color=&quot;#ff0000&quot;&gt;/inet_stream_ops&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;生成sock（简写为sk）&lt;/div&gt;&lt;div&gt;&lt;div&gt;sk-&amp;gt;ops = skt-&amp;gt;net_ops&lt;/div&gt;&lt;div&gt;即 sk-&amp;gt;ops = tcp_ops 或是 udp_ops&lt;/div&gt;&lt;/div&gt;&lt;div&gt;生成sock调用的是&lt;font color=&quot;#ff0000&quot;&gt;&amp;nbsp;&lt;span&gt;tcp_ops-&amp;gt;alloc_sock&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;返回的也是 tcp_sock 类型强转成的 sock&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;sock_init_data：&lt;br&gt;&lt;/div&gt;&lt;div&gt;socket和sock互相关联&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;align=left;verticalAlign=top;" vertex="1" parent="1">
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-6" value="根据传入的参数type&lt;br&gt;选择一项，作为skt：&lt;br&gt;&lt;div&gt;struct sock_type inet_ops[] = {&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;{&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;&amp;nbsp; .sock_ops = &amp;amp;sock_ops,&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;&amp;nbsp; .net_ops = &amp;amp;tcp_ops,&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;&amp;nbsp; .type = SOCK_STREAM,&lt;span&gt;  &lt;/span&gt;//TCP&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;&amp;nbsp; .protocol = IPPROTO_TCP,&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;},&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;{&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;&amp;nbsp; .sock_ops = &amp;amp;sock_ops,&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;&amp;nbsp; .net_ops = &amp;amp;udp_ops,&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;&amp;nbsp; .type = SOCK_DGRAM,&lt;span&gt;  &lt;/span&gt;//UDP&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;&amp;nbsp; .protocol = IPPROTO_UDP,&lt;/div&gt;&lt;div&gt;&lt;span&gt;   &lt;/span&gt;}&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;socket-&amp;gt;ops = skt-&amp;gt;sock_ops;/&lt;font color=&quot;#ff0000&quot;&gt;/inet_stream_ops&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;生成sock（简写为sk）&lt;/div&gt;&lt;div&gt;&lt;div&gt;sk-&amp;gt;ops = skt-&amp;gt;net_ops&lt;/div&gt;&lt;div&gt;即 sk-&amp;gt;ops = tcp_ops 或是 udp_ops&lt;/div&gt;&lt;/div&gt;&lt;div&gt;生成sock调用的是&lt;font color=&quot;#ff0000&quot;&gt;&amp;nbsp;&lt;span&gt;tcp_ops-&amp;gt;alloc_sock&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;返回的也是 tcp_sock 类型强转成的 sock&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;sock_init_data：&lt;br&gt;&lt;/div&gt;&lt;div&gt;socket和sock互相关联&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;align=left;verticalAlign=top;" parent="1" vertex="1">
           <mxGeometry x="1250" y="33" width="270" height="390" as="geometry" />
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="h-AYutWAJ_S-bmYvBNu8-9" target="h-AYutWAJ_S-bmYvBNu8-14">
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="h-AYutWAJ_S-bmYvBNu8-9" target="h-AYutWAJ_S-bmYvBNu8-14" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-8" value="IPC_SOCKET" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="h-AYutWAJ_S-bmYvBNu8-7">
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-8" value="IPC_SOCKET" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="h-AYutWAJ_S-bmYvBNu8-7" vertex="1" connectable="0">
           <mxGeometry x="0.2507" y="-4" relative="1" as="geometry">
             <mxPoint x="-15" y="-4" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-9" value="start_ipc_listener线程：&lt;br&gt;生成一个UNIX域的socket&lt;br&gt;accept之后，产生一个新的datasocket&lt;br&gt;创建ipc_thread结构&lt;br&gt;th-&amp;gt;sock = datasocket&lt;br&gt;将ipc_thread加入到sockets链表【不是connetions链表】名字无所谓，static的&lt;br&gt;socket_count++&lt;br&gt;&lt;br&gt;启动新线程&lt;br&gt;读取datasocket获得消息&lt;br&gt;调用demux_ipc_socket_call分发消息&lt;br&gt;消息类型有：&lt;br&gt;&lt;div&gt;IPC_SOCKET&lt;/div&gt;&lt;div&gt;IPC_CONNECT&lt;/div&gt;&lt;div&gt;IPC_WRITE&lt;/div&gt;&lt;div&gt;IPC_READ&lt;/div&gt;&lt;div&gt;IPC_CLOSE&lt;/div&gt;&lt;div&gt;IPC_POLL&lt;/div&gt;&lt;div&gt;IPC_FCNTL&lt;/div&gt;&lt;div&gt;getsockopt/getpeername/getsockname&lt;/div&gt;&lt;div&gt;下边的都没有：&lt;/div&gt;&lt;div&gt;bind/accept/listen/&lt;span&gt;SENDTO/&lt;/span&gt;&lt;span&gt;RECVFROM&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-9" value="start_ipc_listener线程：&lt;br&gt;生成一个UNIX域的socket&lt;br&gt;accept之后，产生一个新的datasocket&lt;br&gt;创建ipc_thread结构&lt;br&gt;th-&amp;gt;sock = datasocket&lt;br&gt;将ipc_thread加入到sockets链表【不是connetions链表】名字无所谓，static的&lt;br&gt;socket_count++&lt;br&gt;&lt;br&gt;启动新线程&lt;br&gt;读取datasocket获得消息&lt;br&gt;调用demux_ipc_socket_call分发消息&lt;br&gt;消息类型有：&lt;br&gt;&lt;div&gt;IPC_SOCKET&lt;/div&gt;&lt;div&gt;IPC_CONNECT&lt;/div&gt;&lt;div&gt;IPC_WRITE&lt;/div&gt;&lt;div&gt;IPC_READ&lt;/div&gt;&lt;div&gt;IPC_CLOSE&lt;/div&gt;&lt;div&gt;IPC_POLL&lt;/div&gt;&lt;div&gt;IPC_FCNTL&lt;/div&gt;&lt;div&gt;getsockopt/getpeername/getsockname&lt;/div&gt;&lt;div&gt;下边的都没有：&lt;/div&gt;&lt;div&gt;bind/accept/listen/&lt;span&gt;SENDTO/&lt;/span&gt;&lt;span&gt;RECVFROM&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="30" y="64.63" width="230" height="326.75" as="geometry" />
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="h-AYutWAJ_S-bmYvBNu8-14" target="h-AYutWAJ_S-bmYvBNu8-3">
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="h-AYutWAJ_S-bmYvBNu8-14" target="h-AYutWAJ_S-bmYvBNu8-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-11" value="_socket" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="h-AYutWAJ_S-bmYvBNu8-10">
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-11" value="_socket" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="h-AYutWAJ_S-bmYvBNu8-10" vertex="1" connectable="0">
           <mxGeometry x="0.2545" y="2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="h-AYutWAJ_S-bmYvBNu8-14" target="h-AYutWAJ_S-bmYvBNu8-15">
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="h-AYutWAJ_S-bmYvBNu8-14" target="h-AYutWAJ_S-bmYvBNu8-15" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-13" value="ipc_write_rc" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="h-AYutWAJ_S-bmYvBNu8-12">
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-13" value="ipc_write_rc" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="h-AYutWAJ_S-bmYvBNu8-12" vertex="1" connectable="0">
           <mxGeometry x="-0.1511" y="-4" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-14" value="&lt;span&gt;struct ipc_socket *ipc_socket = (struct ipc_socket *)msg-&amp;gt;data;&lt;/span&gt;&lt;br&gt;&lt;div&gt;&lt;span&gt; &lt;/span&gt;pid_t pid = msg-&amp;gt;pid;&lt;/div&gt;&lt;div&gt;&lt;span&gt; &lt;/span&gt;//返回新建socket的fd&lt;/div&gt;&lt;div&gt;&lt;span&gt; &lt;/span&gt;rc = _socket(pid, ipc_socket-&amp;gt;domain, ipc_socket-&amp;gt;type, ipc_socket-&amp;gt;protocol);&lt;/div&gt;&lt;div&gt;&lt;span&gt; &lt;/span&gt;return ipc_write_rc(sockfd, pid, IPC_SOCKET, rc);&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-14" value="&lt;span&gt;struct ipc_socket *ipc_socket = (struct ipc_socket *)msg-&amp;gt;data;&lt;/span&gt;&lt;br&gt;&lt;div&gt;&lt;span&gt; &lt;/span&gt;pid_t pid = msg-&amp;gt;pid;&lt;/div&gt;&lt;div&gt;&lt;span&gt; &lt;/span&gt;//返回新建socket的fd&lt;/div&gt;&lt;div&gt;&lt;span&gt; &lt;/span&gt;rc = _socket(pid, ipc_socket-&amp;gt;domain, ipc_socket-&amp;gt;type, ipc_socket-&amp;gt;protocol);&lt;/div&gt;&lt;div&gt;&lt;span&gt; &lt;/span&gt;return ipc_write_rc(sockfd, pid, IPC_SOCKET, rc);&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="380" y="181.75" width="430" height="92.5" as="geometry" />
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-15" value="int resplen = sizeof(struct ipc_msg) + sizeof(struct ipc_err);&lt;br&gt;write(sockfd, (char *)response, resplen)通过UNIX域的socket回复" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-15" value="int resplen = sizeof(struct ipc_msg) + sizeof(struct ipc_err);&lt;br&gt;write(sockfd, (char *)response, resplen)通过UNIX域的socket回复" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="880" y="488.5" width="350" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-16" value="&lt;div&gt;tsk-&amp;gt;sk.state = TCP_CLOSE;&lt;/div&gt;&lt;div&gt;tsk-&amp;gt;sackok = 1;&lt;/div&gt;&lt;div&gt;&lt;span&gt;tsk-&amp;gt;rmss = 1460;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt; &lt;/span&gt;// send maximum segment size -拥塞控制相关&lt;/div&gt;&lt;div&gt;// Default to 536 as per spec&lt;/div&gt;&lt;div&gt;tsk-&amp;gt;smss = 536;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;skb_queue_init(&amp;amp;tsk-&amp;gt;ofo_queue);&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-16" value="&lt;div&gt;tsk-&amp;gt;sk.state = TCP_CLOSE;&lt;/div&gt;&lt;div&gt;tsk-&amp;gt;sackok = 1;&lt;/div&gt;&lt;div&gt;&lt;span&gt;tsk-&amp;gt;rmss = 1460;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt; &lt;/span&gt;// send maximum segment size -拥塞控制相关&lt;/div&gt;&lt;div&gt;// Default to 536 as per spec&lt;/div&gt;&lt;div&gt;tsk-&amp;gt;smss = 536;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;skb_queue_init(&amp;amp;tsk-&amp;gt;ofo_queue);&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="1640" y="159.25" width="290" height="137.5" as="geometry" />
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-17" value="IPC层" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;" vertex="1" parent="1">
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-17" value="IPC层" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;" parent="1" vertex="1">
           <mxGeometry x="215" y="543.5" width="70" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-18" value="socket层" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;" vertex="1" parent="1">
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-18" value="socket层" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;" parent="1" vertex="1">
           <mxGeometry x="1170" y="638.5" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-19" value="sock层" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;" vertex="1" parent="1">
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-19" value="sock层" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;" parent="1" vertex="1">
           <mxGeometry x="1700" y="623.5" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-20" value="tcp_sock层" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;" vertex="1" parent="1">
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-20" value="tcp_sock层" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;" parent="1" vertex="1">
           <mxGeometry x="1700" y="648.5" width="110" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-21" value="liblevelip.so动态库" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;" vertex="1" parent="1">
-          <mxGeometry x="155" y="1138.5" width="180" height="30" as="geometry" />
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-21" value="liblevelip.so动态库" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="160" y="980" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-22" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="185" y="898.5" width="120" height="60" as="geometry" />
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-22" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="190" y="740" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
