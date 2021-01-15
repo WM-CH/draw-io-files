@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-01-13T15:07:05.690Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="h02QVaXifhESw_ENRY5V" version="14.1.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-15T12:10:13.584Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="qIaDQreXXUk2pVtAjpj4" version="14.2.3" type="github">
   <diagram id="JkMtZPwAcen48O5Z7KO6" name="第 1 页">
-    <mxGraphModel dx="2370" dy="1270" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1185" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -80,10 +80,10 @@
           <mxGeometry x="1710" y="653.5" width="110" height="30" as="geometry" />
         </mxCell>
         <mxCell id="h-AYutWAJ_S-bmYvBNu8-21" value="liblevelip.so动态库" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="160" y="980" width="180" height="30" as="geometry" />
+          <mxGeometry x="250" y="1410" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="h-AYutWAJ_S-bmYvBNu8-22" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="190" y="740" width="120" height="60" as="geometry" />
+        <mxCell id="h-AYutWAJ_S-bmYvBNu8-22" value="curl应用程序调用的系统调用接口&lt;br&gt;都被liblevelip.so接管了&lt;br&gt;而这些系统调用的实现，最后读写的是Unix域的那个socket。负责处理的是 start_ipc_listener 线程&lt;br&gt;例如curl调用了liblevelip.so里的read系统调用，&lt;br&gt;它做的事：读写了Unix域的socket&lt;br&gt;最终需要了解的是 start_ipc_listener 线程中IPC_WRITE/IPC_READ的实现。&lt;br&gt;&lt;br&gt;&lt;br&gt;网卡收到的数据，给到tap0设备，是另外一个线程 netdev_rx_loop 去处理，它 read/write tap 设备" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="50" y="1210" width="720" height="150" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
