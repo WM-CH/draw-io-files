@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-01-15T14:57:55.129Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="nVFsikYWj75pNjBP9kAZ" version="14.2.3" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-15T16:22:02.453Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="3fgG8LJp6p2f8MXUwakx" version="14.2.3" type="github">
   <diagram id="JkMtZPwAcen48O5Z7KO6" name="第 1 页">
     <mxGraphModel dx="4382" dy="1905" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -95,7 +95,7 @@
           <mxGeometry x="1790" y="40" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="h-AYutWAJ_S-bmYvBNu8-22" value="程序总体规划：&lt;br&gt;&lt;br&gt;curl应用程序调用的系统调用接口&lt;br&gt;都被liblevelip.so接管了&lt;br&gt;而这些系统调用的实现，最后读写的是Unix域的那个socket。负责处理的是 start_ipc_listener 线程&lt;br&gt;例如curl调用了liblevelip.so里的read系统调用，&lt;br&gt;它做的事：读写了Unix域的socket&lt;br&gt;最终需要了解的是 start_ipc_listener 线程中IPC_WRITE/IPC_READ的实现。&lt;br&gt;&lt;br&gt;&lt;br&gt;网卡收到的数据，给到tap0设备，是另外一个线程 netdev_rx_loop 去处理，它 read/write tap 设备" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="-760" y="304.25" width="720" height="180" as="geometry" />
+          <mxGeometry x="-720" y="110" width="550" height="445.75" as="geometry" />
         </mxCell>
         <mxCell id="nQ9esfCF_CsTz2VPVnLO-1" value="&lt;span&gt;struct ipc_socket *ipc_socket = (struct ipc_socket *)msg-&amp;gt;data;&lt;/span&gt;&lt;br&gt;&lt;div&gt;&lt;span&gt; &lt;/span&gt;pid_t pid = msg-&amp;gt;pid;&lt;/div&gt;&lt;div&gt;&lt;span&gt; &lt;/span&gt;//返回新建socket的fd&lt;/div&gt;&lt;div&gt;&lt;span&gt; &lt;/span&gt;rc = _socket(pid, ipc_socket-&amp;gt;domain, ipc_socket-&amp;gt;type, ipc_socket-&amp;gt;protocol);&lt;/div&gt;&lt;div&gt;&lt;span&gt; &lt;/span&gt;return ipc_write_rc(sockfd, pid, IPC_SOCKET, rc);&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
           <mxGeometry x="414" y="1230" width="430" height="92.5" as="geometry" />
