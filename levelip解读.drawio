@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-01-16T01:49:13.687Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="zJwrT3hWKdgomyPBwPJQ" version="14.2.3" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-16T02:15:10.921Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="QL2Rnz2i7NmrMrQNI37U" version="14.2.3" type="github">
   <diagram id="JkMtZPwAcen48O5Z7KO6" name="第 1 页">
     <mxGraphModel dx="2012" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -152,15 +152,15 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="yaBAwWdUjn6GlstP9hA2-4" value="&lt;div&gt;uint16_t dport = ((struct sockaddr_in *)addr)-&amp;gt;sin_port;&lt;/div&gt;&lt;div&gt;uint32_t daddr = ((struct sockaddr_in *)addr)-&amp;gt;sin_addr.s_addr;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;sk-&amp;gt;dport = ntohs(dport);&lt;/div&gt;&lt;div&gt;sk-&amp;gt;sport = generate_port();随机一个口&lt;/div&gt;&lt;div&gt;sk-&amp;gt;daddr = ntohl(daddr);&lt;/div&gt;&lt;div&gt;sk-&amp;gt;saddr = parse_ipv4_string(&quot;10.0.0.4&quot;); tap设备的IP地址&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
-          <mxGeometry x="1707.5" y="1218.59" width="360" height="115.32" as="geometry" />
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-4" value="&lt;div&gt;uint16_t dport = ((struct sockaddr_in *)addr)-&amp;gt;sin_port;&lt;/div&gt;&lt;div&gt;uint32_t daddr = ((struct sockaddr_in *)addr)-&amp;gt;sin_addr.s_addr;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;sk-&amp;gt;dport = ntohs(dport);&lt;/div&gt;&lt;div&gt;sk-&amp;gt;sport = generate_port();随机一个口&lt;/div&gt;&lt;div&gt;sk-&amp;gt;daddr = ntohl(daddr);&lt;/div&gt;&lt;div&gt;sk-&amp;gt;saddr = parse_ipv4_string(&quot;10.0.0.4&quot;); tap设备的IP地址&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;return tcp_connect(sk);&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1708" y="1200.54" width="360" height="151.41" as="geometry" />
         </mxCell>
         <mxCell id="yaBAwWdUjn6GlstP9hA2-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="yaBAwWdUjn6GlstP9hA2-7" target="yaBAwWdUjn6GlstP9hA2-14">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="yaBAwWdUjn6GlstP9hA2-16" value="&lt;span style=&quot;font-size: 12px ; text-align: left ; background-color: rgb(248 , 249 , 250)&quot;&gt;tcp_send_syn&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="yaBAwWdUjn6GlstP9hA2-15">
           <mxGeometry x="-0.3082" y="-2" relative="1" as="geometry">
-            <mxPoint x="30.83" y="-1.99" as="offset" />
+            <mxPoint x="14.999999999999998" y="-1.99" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="yaBAwWdUjn6GlstP9hA2-7" value="&lt;div&gt;//把 struct sock 转换回去为 struct tcp_sock&lt;/div&gt;&lt;div&gt;struct tcp_sock *tsk = tcp_sk(sk);&lt;/div&gt;&lt;div&gt;struct tcb *tcb = &amp;amp;tsk-&amp;gt;tcb;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;tsk-&amp;gt;tcp_header_len = sizeof(struct tcphdr);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;tcb-&amp;gt;iss = generate_iss();&lt;/div&gt;&lt;div&gt;tcb-&amp;gt;snd_wnd = 0;&lt;/div&gt;&lt;div&gt;tcb-&amp;gt;snd_wl1 = 0;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;tcb-&amp;gt;snd_una = tcb-&amp;gt;iss;&lt;/div&gt;&lt;div&gt;tcb-&amp;gt;snd_up = tcb-&amp;gt;iss;&lt;/div&gt;&lt;div&gt;tcb-&amp;gt;snd_nxt = tcb-&amp;gt;iss;&lt;/div&gt;&lt;div&gt;tcb-&amp;gt;rcv_nxt = 0;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;//接收窗口的大小&lt;/div&gt;&lt;div&gt;tcp_select_initial_window(&amp;amp;tsk-&amp;gt;tcb.rcv_wnd);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;// tcp_send_syn可能由于暂时找不到以太网地址的原因发送失败&lt;/div&gt;&lt;div&gt;// 但是存在定时器,隔一段时间再次尝试发送.&lt;/div&gt;&lt;div&gt;rc = tcp_send_syn(sk);&lt;/div&gt;&lt;div&gt;tcb-&amp;gt;snd_nxt++;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;return rc;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
@@ -169,8 +169,105 @@
         <mxCell id="yaBAwWdUjn6GlstP9hA2-10" value="通过socket找到sock&lt;br&gt;&lt;br&gt;socket-&amp;gt;state ==&amp;nbsp;&lt;span style=&quot;background-color: rgb(255 , 255 , 153)&quot;&gt;SS_UNCONNECTED&lt;/span&gt;&lt;br&gt;sock-&amp;gt;state ==&amp;nbsp;&lt;span style=&quot;background-color: rgb(255 , 255 , 153)&quot;&gt;TCP_CLOSE&lt;/span&gt;&lt;br&gt;&lt;br&gt;sk-&amp;gt;ops-&amp;gt;connect == &lt;br&gt;tcp_ops-&amp;gt;connect == tcp_v4_connect =&amp;gt;&amp;gt;&amp;gt;&lt;br&gt;sock-&amp;gt;state = &lt;span style=&quot;background-color: rgb(255 , 255 , 102)&quot;&gt;SS_CONNECTING;&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color: rgb(255 , 255 , 255)&quot;&gt;&lt;br&gt;条件变量阻塞，被其他线程唤醒后继续执行&lt;br&gt;&lt;/span&gt;sock-&amp;gt;state = &lt;span style=&quot;background-color: rgb(255 , 255 , 102)&quot;&gt;SS_CONNECTED;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
           <mxGeometry x="1330" y="1179.38" width="250" height="193.75" as="geometry" />
         </mxCell>
-        <mxCell id="yaBAwWdUjn6GlstP9hA2-14" value="" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
-          <mxGeometry x="2710" y="1246.26" width="120" height="60" as="geometry" />
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="yaBAwWdUjn6GlstP9hA2-14" target="yaBAwWdUjn6GlstP9hA2-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3020" y="1276" />
+              <mxPoint x="3020" y="885" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-19" value="&lt;span style=&quot;font-size: 12px ; text-align: left ; background-color: rgb(248 , 249 , 250)&quot;&gt;tcp_syn_options&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="yaBAwWdUjn6GlstP9hA2-18">
+          <mxGeometry x="0.1131" y="3" relative="1" as="geometry">
+            <mxPoint x="73" y="-109.2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="yaBAwWdUjn6GlstP9hA2-14" target="yaBAwWdUjn6GlstP9hA2-20">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3020" y="1276" />
+              <mxPoint x="3020" y="1151" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-22" value="&lt;span style=&quot;font-size: 12px ; text-align: left ; background-color: rgb(248 , 249 , 250)&quot;&gt;tcp_alloc_skb&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="yaBAwWdUjn6GlstP9hA2-21">
+          <mxGeometry x="0.5684" y="-3" relative="1" as="geometry">
+            <mxPoint x="-5.899999999999999" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="yaBAwWdUjn6GlstP9hA2-14" target="yaBAwWdUjn6GlstP9hA2-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-31" value="tcp_hdr" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="yaBAwWdUjn6GlstP9hA2-30">
+          <mxGeometry x="0.2517" y="-3" relative="1" as="geometry">
+            <mxPoint x="-6.5" y="-3.07" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="yaBAwWdUjn6GlstP9hA2-14" target="yaBAwWdUjn6GlstP9hA2-32">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3020" y="1276" />
+              <mxPoint x="3020" y="1472" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-34" value="&lt;span style=&quot;font-size: 12px ; text-align: left ; background-color: rgb(248 , 249 , 250)&quot;&gt;tcp_write_options&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="yaBAwWdUjn6GlstP9hA2-33">
+          <mxGeometry x="0.7886" y="-4" relative="1" as="geometry">
+            <mxPoint x="-31.67" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="yaBAwWdUjn6GlstP9hA2-14" target="yaBAwWdUjn6GlstP9hA2-35">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3020" y="1276" />
+              <mxPoint x="3020" y="1820" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-37" value="tcp_queue_transmit_skb" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="yaBAwWdUjn6GlstP9hA2-36">
+          <mxGeometry x="0.7182" y="-2" relative="1" as="geometry">
+            <mxPoint x="10.67" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-14" value="&lt;div&gt;struct sk_buff *skb;&lt;/div&gt;&lt;div&gt;struct tcphdr *th;&lt;/div&gt;&lt;div&gt;struct tcp_options opts = { 0 };&lt;/div&gt;&lt;div&gt;int tcp_options_len = 0;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;tcp_options_len = tcp_syn_options(sk, &amp;amp;opts);&lt;span&gt;	&lt;/span&gt;//tcp选项的长度&lt;/div&gt;&lt;div&gt;skb = tcp_alloc_skb(tcp_options_len, 0);&lt;span&gt;		&lt;/span&gt;//需要发送tcp选项&lt;/div&gt;&lt;div&gt;th = tcp_hdr(skb);&lt;span&gt;								&lt;/span&gt;//指向tcp头部&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;tcp_write_options(th, &amp;amp;opts, tcp_options_len);&lt;/div&gt;&lt;div&gt;sk-&amp;gt;state = &lt;span style=&quot;background-color: rgb(255 , 255 , 102)&quot;&gt;TCP_SYN_SENT&lt;/span&gt;;&lt;/div&gt;&lt;div&gt;th-&amp;gt;syn = 1;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;return tcp_queue_transmit_skb(sk, skb);&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="2650" y="1148.44" width="340" height="255.62" as="geometry" />
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-17" value="&lt;div&gt;&amp;nbsp; &amp;nbsp; struct tcp_sock *tsk = tcp_sk(sk);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; opts-&amp;gt;mss = tsk-&amp;gt;rmss;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; optlen += TCP_OPTLEN_MSS;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; if (tsk-&amp;gt;sackok) {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; opts-&amp;gt;sack = 1;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; optlen += TCP_OPT_NOOP * 2;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; optlen += TCP_OPTLEN_SACK;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; } else {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; opts-&amp;gt;sack = 0;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; return optlen;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="3160" y="780" width="300" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="yaBAwWdUjn6GlstP9hA2-20" target="yaBAwWdUjn6GlstP9hA2-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-25" value="&lt;span style=&quot;font-size: 12px ; text-align: left ; background-color: rgb(248 , 249 , 250)&quot;&gt;alloc_skb&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="yaBAwWdUjn6GlstP9hA2-24">
+          <mxGeometry x="-0.3" relative="1" as="geometry">
+            <mxPoint x="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="yaBAwWdUjn6GlstP9hA2-20" target="yaBAwWdUjn6GlstP9hA2-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-28" value="skb_reserve" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="yaBAwWdUjn6GlstP9hA2-27">
+          <mxGeometry x="-0.1435" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-20" value="&lt;div&gt;&amp;nbsp; &amp;nbsp; int reserved = ETH_HDR_LEN + IP_HDR_LEN + TCP_HDR_LEN + optlen + size;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; struct sk_buff *skb = alloc_skb(reserved);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; skb_reserve(skb, reserved);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; skb-&amp;gt;protocol = IP_TCP;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; skb-&amp;gt;dlen = size;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; skb-&amp;gt;seq = 0;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="3160" y="1090.11" width="470" height="122" as="geometry" />
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-23" value="&lt;div&gt;struct sk_buff *skb = malloc(sizeof(struct sk_buff));&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;memset(skb, 0, sizeof(struct sk_buff));&lt;/div&gt;&lt;div&gt;skb-&amp;gt;data = malloc(size);&lt;/div&gt;&lt;div&gt;memset(skb-&amp;gt;data, 0, size);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;skb-&amp;gt;refcnt = 0;&lt;/div&gt;&lt;div&gt;skb-&amp;gt;head = skb-&amp;gt;data;&lt;/div&gt;&lt;div&gt;skb-&amp;gt;end = skb-&amp;gt;data + size;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;list_init(&amp;amp;skb-&amp;gt;list);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;return skb;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="3740" y="899.9999999999999" width="290" height="208.89" as="geometry" />
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-26" value="&lt;div&gt;//一下保留很多段&lt;/div&gt;&lt;div&gt;void *skb_reserve(struct sk_buff *skb, unsigned int len)&lt;/div&gt;&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; skb-&amp;gt;data += len;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; return skb-&amp;gt;data;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;//要修改哪一段的内容时，把哪一段push出来。&lt;/div&gt;&lt;div&gt;uint8_t *skb_push(struct sk_buff *skb, unsigned int len)&lt;/div&gt;&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; skb-&amp;gt;data -= len;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; skb-&amp;gt;len += len;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; return skb-&amp;gt;data;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="3740" y="1148.44" width="308" height="238" as="geometry" />
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-29" value="head向后，跳过ETH头，跳过IP头&lt;br&gt;(struct tcphdr *)(skb-&amp;gt;head + ETH_HDR_LEN + IP_HDR_LEN);" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="3160" y="1241.88" width="350" height="68.75" as="geometry" />
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-32" value="&lt;div&gt;&amp;nbsp; &amp;nbsp; struct tcp_opt_mss *opt_mss = (struct tcp_opt_mss *) th-&amp;gt;data;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; uint32_t i = 0;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; opt_mss-&amp;gt;kind = TCP_OPT_MSS;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; opt_mss-&amp;gt;len = TCP_OPTLEN_MSS;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; opt_mss-&amp;gt;mss = htons(opts-&amp;gt;mss);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; i += sizeof(struct tcp_opt_mss);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; if (opts-&amp;gt;sack) {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; th-&amp;gt;data[i++] = TCP_OPT_NOOP;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; th-&amp;gt;data[i++] = TCP_OPT_NOOP;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; th-&amp;gt;data[i++] = TCP_OPT_SACK_OK;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; th-&amp;gt;data[i++] = TCP_OPTLEN_SACK;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; th-&amp;gt;hl = TCP_DOFFSET + (optlen / 4);&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="3160" y="1344" width="360" height="256" as="geometry" />
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-35" value="&lt;div&gt;&lt;div&gt;//tcp_queue_transmit_skb 将要发送的内容加入write_queue,&lt;/div&gt;&lt;div&gt;//没有接收到ack的话,会一直重传该数据包&lt;/div&gt;&lt;div&gt;//而tcp_transmit_skb函数不会如此.&amp;nbsp;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; struct tcp_sock *tsk = tcp_sk(sk);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; struct tcb *tcb = &amp;amp;tsk-&amp;gt;tcb;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; struct tcphdr * th = tcp_hdr(skb);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; if (skb_queue_empty(&amp;amp;sk-&amp;gt;write_queue)) {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; tcp_rearm_rto_timer(tsk);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; if (tsk-&amp;gt;inflight == 0) {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; /* Store sequence information into the socket buffer */&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; rc = tcp_transmit_skb(sk, skb, tcb-&amp;gt;snd_nxt);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; tsk-&amp;gt;inflight++;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; skb-&amp;gt;seq = tcb-&amp;gt;snd_nxt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; tcb-&amp;gt;snd_nxt += skb-&amp;gt;dlen;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; skb-&amp;gt;end_seq = tcb-&amp;gt;snd_nxt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; if (th-&amp;gt;fin) tcb-&amp;gt;snd_nxt++;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; skb_queue_tail(&amp;amp;sk-&amp;gt;write_queue, skb);&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="3160" y="1640" width="340" height="360" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
