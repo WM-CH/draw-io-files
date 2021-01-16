@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-01-16T01:28:03.053Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="9C8lJfFW8yO7J1_fWr-n" version="14.2.3" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-16T01:49:13.687Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="zJwrT3hWKdgomyPBwPJQ" version="14.2.3" type="github">
   <diagram id="JkMtZPwAcen48O5Z7KO6" name="第 1 页">
     <mxGraphModel dx="2012" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -138,7 +138,7 @@
         </mxCell>
         <mxCell id="yaBAwWdUjn6GlstP9hA2-12" value="&lt;span style=&quot;font-size: 12px ; text-align: left ; background-color: rgb(248 , 249 , 250)&quot;&gt;inet_stream_connect&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="yaBAwWdUjn6GlstP9hA2-11">
           <mxGeometry x="-0.2237" relative="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint x="11.67" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="yaBAwWdUjn6GlstP9hA2-1" value="根据pid和fd查找到socket&lt;br&gt;&lt;br&gt;sock-&amp;gt;ops-&amp;gt;connect == &lt;br&gt;inet_stream_ops-&amp;gt;connect == &lt;br&gt;inet_stream_connect" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;align=left;" vertex="1" parent="1">
@@ -153,13 +153,24 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="yaBAwWdUjn6GlstP9hA2-4" value="&lt;div&gt;uint16_t dport = ((struct sockaddr_in *)addr)-&amp;gt;sin_port;&lt;/div&gt;&lt;div&gt;uint32_t daddr = ((struct sockaddr_in *)addr)-&amp;gt;sin_addr.s_addr;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;sk-&amp;gt;dport = ntohs(dport);&lt;/div&gt;&lt;div&gt;sk-&amp;gt;sport = generate_port();随机一个口&lt;/div&gt;&lt;div&gt;sk-&amp;gt;daddr = ntohl(daddr);&lt;/div&gt;&lt;div&gt;sk-&amp;gt;saddr = parse_ipv4_string(&quot;10.0.0.4&quot;); tap设备的IP地址&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
-          <mxGeometry x="1680" y="1218.59" width="360" height="115.32" as="geometry" />
+          <mxGeometry x="1707.5" y="1218.59" width="360" height="115.32" as="geometry" />
         </mxCell>
-        <mxCell id="yaBAwWdUjn6GlstP9hA2-7" value="" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
-          <mxGeometry x="2120" y="1215.75" width="290" height="121" as="geometry" />
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="yaBAwWdUjn6GlstP9hA2-7" target="yaBAwWdUjn6GlstP9hA2-14">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="yaBAwWdUjn6GlstP9hA2-10" value="通过socket找到sock&lt;br&gt;&lt;br&gt;socket-&amp;gt;state ==&amp;nbsp;&lt;span style=&quot;background-color: rgb(255 , 255 , 153)&quot;&gt;SS_UNCONNECTED&lt;/span&gt;&lt;br&gt;sock-&amp;gt;state ==&amp;nbsp;&lt;span style=&quot;background-color: rgb(255 , 255 , 153)&quot;&gt;TCP_CLOSE&lt;/span&gt;&lt;br&gt;&lt;br&gt;sk-&amp;gt;ops-&amp;gt;connect == &lt;br&gt;tcp_ops-&amp;gt;connect == &lt;br&gt;tcp_v4_connect&lt;br&gt;&lt;br&gt;sock-&amp;gt;state = &lt;span style=&quot;background-color: rgb(255 , 255 , 102)&quot;&gt;SS_CONNECTING;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
-          <mxGeometry x="1290" y="1179.38" width="270" height="193.75" as="geometry" />
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-16" value="&lt;span style=&quot;font-size: 12px ; text-align: left ; background-color: rgb(248 , 249 , 250)&quot;&gt;tcp_send_syn&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="yaBAwWdUjn6GlstP9hA2-15">
+          <mxGeometry x="-0.3082" y="-2" relative="1" as="geometry">
+            <mxPoint x="30.83" y="-1.99" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-7" value="&lt;div&gt;//把 struct sock 转换回去为 struct tcp_sock&lt;/div&gt;&lt;div&gt;struct tcp_sock *tsk = tcp_sk(sk);&lt;/div&gt;&lt;div&gt;struct tcb *tcb = &amp;amp;tsk-&amp;gt;tcb;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;tsk-&amp;gt;tcp_header_len = sizeof(struct tcphdr);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;tcb-&amp;gt;iss = generate_iss();&lt;/div&gt;&lt;div&gt;tcb-&amp;gt;snd_wnd = 0;&lt;/div&gt;&lt;div&gt;tcb-&amp;gt;snd_wl1 = 0;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;tcb-&amp;gt;snd_una = tcb-&amp;gt;iss;&lt;/div&gt;&lt;div&gt;tcb-&amp;gt;snd_up = tcb-&amp;gt;iss;&lt;/div&gt;&lt;div&gt;tcb-&amp;gt;snd_nxt = tcb-&amp;gt;iss;&lt;/div&gt;&lt;div&gt;tcb-&amp;gt;rcv_nxt = 0;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;//接收窗口的大小&lt;/div&gt;&lt;div&gt;tcp_select_initial_window(&amp;amp;tsk-&amp;gt;tcb.rcv_wnd);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;// tcp_send_syn可能由于暂时找不到以太网地址的原因发送失败&lt;/div&gt;&lt;div&gt;// 但是存在定时器,隔一段时间再次尝试发送.&lt;/div&gt;&lt;div&gt;rc = tcp_send_syn(sk);&lt;/div&gt;&lt;div&gt;tcb-&amp;gt;snd_nxt++;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;return rc;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="2191" y="1090.11" width="349" height="372.29" as="geometry" />
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-10" value="通过socket找到sock&lt;br&gt;&lt;br&gt;socket-&amp;gt;state ==&amp;nbsp;&lt;span style=&quot;background-color: rgb(255 , 255 , 153)&quot;&gt;SS_UNCONNECTED&lt;/span&gt;&lt;br&gt;sock-&amp;gt;state ==&amp;nbsp;&lt;span style=&quot;background-color: rgb(255 , 255 , 153)&quot;&gt;TCP_CLOSE&lt;/span&gt;&lt;br&gt;&lt;br&gt;sk-&amp;gt;ops-&amp;gt;connect == &lt;br&gt;tcp_ops-&amp;gt;connect == tcp_v4_connect =&amp;gt;&amp;gt;&amp;gt;&lt;br&gt;sock-&amp;gt;state = &lt;span style=&quot;background-color: rgb(255 , 255 , 102)&quot;&gt;SS_CONNECTING;&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color: rgb(255 , 255 , 255)&quot;&gt;&lt;br&gt;条件变量阻塞，被其他线程唤醒后继续执行&lt;br&gt;&lt;/span&gt;sock-&amp;gt;state = &lt;span style=&quot;background-color: rgb(255 , 255 , 102)&quot;&gt;SS_CONNECTED;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="1179.38" width="250" height="193.75" as="geometry" />
+        </mxCell>
+        <mxCell id="yaBAwWdUjn6GlstP9hA2-14" value="" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="2710" y="1246.26" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
