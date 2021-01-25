@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-01-25T15:00:55.081Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="hWhL_j4MgtFJHtrwexDL" version="14.2.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-25T16:27:36.837Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="FFaEZupvqXC-_gDpkUpM" version="14.2.7" type="github">
   <diagram id="JkMtZPwAcen48O5Z7KO6" name="第 1 页">
-    <mxGraphModel dx="2858" dy="4596" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3197" dy="4777" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -565,6 +565,9 @@
         </mxCell>
         <mxCell id="_rQZCAvEsuq2RI9ONmL4-4" value="TCP部分&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeWidth=20;fontSize=40;labelBackgroundColor=#ffffff;" parent="1" vertex="1">
           <mxGeometry x="6260" y="1860" width="190" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5PROk2T1mQ7U2LQReqJS-1" value="&lt;div style=&quot;font-size: 16px;&quot;&gt;/* Transmission Control Block 传输控制块&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&amp;nbsp; &amp;nbsp;被包裹在tcp_sock结构中，发送时操作这里的数据&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&amp;nbsp; &amp;nbsp;在接收到tcp数据后，inet_lookup函数根据dport/sport查找到想要的socket&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&amp;nbsp; &amp;nbsp;进而找到sock结构，也就能找到所属的tcp_sock结构。&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&amp;nbsp; &amp;nbsp;进而拿到tcb，获得当时发出去时，tcb的各个数据值！&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;*/&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="4060" y="1380" width="570" height="170" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
