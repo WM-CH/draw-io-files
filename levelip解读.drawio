@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-01-30T16:11:22.878Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.104 Safari/537.36" etag="ifdB5aLnCc5Zh3Wp20cI" version="14.2.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-30T16:12:37.666Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.104 Safari/537.36" etag="T2va36Uaog459nqUxLxH" version="14.2.7" type="github">
   <diagram id="JkMtZPwAcen48O5Z7KO6" name="第 1 页">
     <mxGraphModel dx="11765" dy="9369" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -596,9 +596,6 @@
         </mxCell>
         <mxCell id="l47F2Lt6wSQzl0Io3pGd-6" value="&lt;div&gt;void sock_connected(struct sock *sk)&lt;/div&gt;&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; struct socket *sock = sk-&amp;gt;sock;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; sock-&amp;gt;state = SS_CONNECTED;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; sk-&amp;gt;err = 0;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; sk-&amp;gt;poll_events = (POLLOUT | POLLWRNORM | POLLWRBAND);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;/span&gt;&amp;nbsp; &amp;nbsp; //哇，唤醒了！&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; wait_wakeup(&amp;amp;sock-&amp;gt;sleep);&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontColor=#0000FF;" vertex="1" parent="1">
           <mxGeometry x="5830" y="860" width="440" height="200" as="geometry" />
-        </mxCell>
-        <mxCell id="l47F2Lt6wSQzl0Io3pGd-19" value="" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#000000;align=left;" vertex="1" parent="1">
-          <mxGeometry x="4060" y="-3400" width="2050" height="1380" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
